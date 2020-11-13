@@ -1,0 +1,66 @@
+T1	drug 36 47	amoxicillin
+T2	studyType 64 79	crossover study
+T3	food 137 141	food
+T4	pharmacokinetics 149 159	absorption
+T5	drug 163 174	amoxicillin
+T6	drug 179 189	ampicillin
+T7	population 205 223	16 normal subjects
+T8	studyType 229 257	double-blind crossover study
+T9	frequency 289 295	single
+T10	mode 296 300	oral
+T11	dosage 301 307	500-mg
+T14	pharmacokinetics 495 513	kinetic parameters
+T15	drug 630 641	amoxicillin
+T16	pharmacokinetics 642 652	absorption
+T19	pharmacokinetics 735 755	area under the curve
+T23	drug 879 889	Ampicillin
+T24	pharmacokinetics 890 900	absorption
+T25	interaction 919 928	decreased
+T27	pharmacokinetics 1191 1201	absorption
+T28	mode 1205 1211	orally
+T29	drug 1225 1236	amoxicillin
+T30	drug 52 62	ampicillin
+T31	pharmacokinetics 437 457	area under the curve
+T38	pharmacokinetics 1033 1053	area under the curve
+T40	parameter 1106 1122	urinary recovery
+T26	pharmacokinetics 16 32	Pharmacokinetics
+T33	food 97 101	food
+T42	pharmacokinetics 358 386	one-compartment linear model
+T43	mealTime 1264 1275	asted state
+T12	pharmacokinetics 392 414	first-order absorption
+T13	pharmacokinetics 419 435	absorption delay
+T32	meal 601 608	fasting
+T44	meal 616 626	nonfasting
+T45	interaction 588 597	no effect
+T17	pharmacokinetics 670 686	peak serum level
+T18	value 710 720	8.8 mug/ml
+T46	meal 722 732	nonfasting
+T48	meal 701 708	fasting
+T47	value 689 699	8.9 mug/ml
+T20	meal 780 787	fasting
+T49	meal 812 822	nonfasting
+T50	value 789 800	22.2 mug/ml
+T51	value 757 767	26.9 mug/m
+T34	meal 852 859	fasting
+T52	meal 866 876	nonfasting
+T53	value 847 850	47%
+T54	value 861 864	44%
+T36	meal 1000 1007	fasting
+T55	meal 1021 1031	nonfasting
+T56	value 1009 1019	4.0 mug/ml
+T57	value 988 998	5.4 mug/ml
+T58	pharmacokinetics 976 987	peak level:
+T39	value 1055 1068	17.4 h.mug/ml
+T41	meal 1070 1077	fasting
+T59	value 1079 1092	12.0 h.mug/ml
+T60	meal 1094 1104	nonfasting
+T61	meal 1143 1153	nonfasting
+T62	meal 1129 1136	fasting
+T63	value 1138 1141	29%
+T64	value 1124 1127	37%
+T65	population 269 276	subject
+T21	pharmacokinetics 829 845	urinary recovery
+T22	pharmacokinetics 463 479	urinary recovery
+T66	interaction 578 584	little
+T67	population 936 951	nonfasted group
+T35	pharmacokinetics 314 331	Serum drug levels
