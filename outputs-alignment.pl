@@ -60,7 +60,7 @@ sub traiteTexte() {
     my @tokens=split(//,$texte); my $last=0;
     foreach my $token (@tokens) {
 	my $idx=index($texte,$token,$last);
-	my $cle; if ($idx<10) { $cle="0000$idx"; } elsif ($idx<100) { $cle="000$idx"; } elsif ($idx<1000) { $cle="00$idx"; } elsif ($idx<10000) { $cle="0$idx"; } else { $cle=$idx; }
+	my $cle; if ($idx<10) { $cle="000000$idx"; } elsif ($idx<100) { $cle="00000$idx"; } elsif ($idx<1000) { $cle="0000$idx"; } elsif ($idx<10000) { $cle="000$idx"; } elsif ($idx<100000) { $cle="00$idx"; } elsif ($idx<1000000) { $cle="0$idx"; } else { $cle=$idx; }
 	$cont{$cle}=$token;
 	$last=$idx+length($token);
     }

@@ -17,6 +17,7 @@
 use strict;
 use utf8;
 my $seuil=0;
+my $prec="O";
 
 while (my $ligne=<STDIN>) {
     chomp $ligne;
@@ -38,7 +39,16 @@ while (my $ligne=<STDIN>) {
     print "$ligne\t";
     foreach my $classe (sort keys %annot) {
 	if ($annot{$classe}>=$seuil) {
-	    if ($rover==0) { print "$classe\n"; $rover=1; }
+	    if ($rover==0) {
+		if (substr($classe,1) ne substr($prec,1) && $classe=~/^I/) { $classe=~s/^I/B/; }
+		print "$classe";
+		$rover=1; $prec=$classe;
+	    }
 	}
     }
+    # Si le ROVER est impossible (annotations différentes dans chaque
+    # colonne : aucune annotation n'émerge), on reproduit le label "O"
+    # pour avoir le même nombre de colonnes sur chaque ligne en sortie
+    if ($rover==0) { print "O"; $prec="O"; }
+    print "\n";
 }
