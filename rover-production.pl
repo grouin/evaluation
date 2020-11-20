@@ -29,8 +29,10 @@ while (my $ligne=<STDIN>) {
     $seuil=($#cols-1)/2;
 
     # Récupération des classes dans chaque colonne d'annotation et du
-    # nombre de fois où chaque classe est utilisée
-    for (my $i=2;$i<=$#cols;$i++) { $annot{$cols[$i]}++; }
+    # nombre de fois où chaque classe est utilisée. On remplace le
+    # préfixe B par I pour rassembler les annotations de même label
+    # indépendamment des différences de préfixe (B-tag vs. I-tag)
+    for (my $i=2;$i<=$#cols;$i++) { my $c=$cols[$i]; $c=~s/^B/I/; $annot{$c}++; }
     
     # Affichage de l'annotation majoritaire : la première classe dont
     # le nombre d'annotations est supérieur ou égal au seuil. L'ordre
@@ -40,7 +42,12 @@ while (my $ligne=<STDIN>) {
     foreach my $classe (sort keys %annot) {
 	if ($annot{$classe}>=$seuil) {
 	    if ($rover==0) {
+		# Si la classe actuelle est différente de celle de la
+		# ligne précédente et que la classe actuelle commence
+		# par le préfixe I, on remplace ce préfixe par B
 		if (substr($classe,1) ne substr($prec,1) && $classe=~/^I/) { $classe=~s/^I/B/; }
+		# Pas de début d'annotation sur une espace
+		if ($cols[1]=~/SPACE/ && $classe=~/^B/) { $classe="O"; }
 		print "$classe";
 		$rover=1; $prec=$classe;
 	    }
