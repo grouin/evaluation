@@ -45,6 +45,19 @@ Soit deux sorties sur un même document, les situations sont :
 S'il n'existe qu'un seul système participant, on cherchera des portions répétées ou similaires dans les documents traités.
 
 
+## Format
+
+Les annotations gérées par cette chaîne de traitements sont au format BRAT : 3 colonnes séparées par une tabulation (identifiant, informations d'annotation, portion de texte), la colonne du milieu étant composée de 3 colonnes séparées par une espace (label, offset de début, offset de fin). Pour le tweet :
+
+	Vendée Globe / E-sport. Virtual Regatta : ruée sur les inscriptions, Loïck Peyron sera de la partie
+
+Les entités annotées apparaissent sous la forme :
+
+	T1      course 0 12     Vendée Globe
+	T2      evenement 24 39 Virtual Regatta
+	T3      personne 69 81  Loïck Peyron
+
+
 ## Scripts
 
 ### Alignement d'annotations
@@ -84,6 +97,12 @@ Ce dernier script récupère les annotations majoritaires et produit un fichier 
 	java -cp BRATEval-0.0.2-SNAPSHOT.jar au.com.nicta.csp.brateval.CompareEntities ref/ sys3/ true
 
 
-## Exemples
+## Exemple
 
-Les répertoires ref/ sys1/ sys2/ sys3/ contiennent un fichier texte dans le premier répertoire et trois versions annotées de ce fichier dans les répertoires sys* issus du projet MIAM.
+Les répertoires ref/ sys1/ sys2/ sys3/ contiennent des fichiers textes dans le premier répertoire et trois versions annotées aléatoirement pour ces fichiers dans les répertoires sys*/ au format BRAT
+
+La production du ROVER au format BRAT dans le répertoire ref/ se fait avec un script PERL d'appel des différents scripts sur les différents répertoires (le premier répertoire contient forcément les fichiers *txt et contiendra le résultat du ROVER dans des fichiers *ann) :
+
+	perl lanceur.pl ref/ sys1/ sys2/ sys3/
+
+Ce lanceur applique successivement les scripts outputs-alignment.pl, rover-production.pl et brat-conversion.pl pour produire les annotations de référence de la tâche 1 sur le challenge Covid-19 MLIA (http://eval.covid19-mlia.eu/task1/).

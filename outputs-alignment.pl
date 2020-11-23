@@ -29,6 +29,7 @@
 
 use utf8;
 use strict;
+binmode STDOUT, ":encoding(utf8)";
 
 my @fichiers=@ARGV;
 my %tabulaire=();
