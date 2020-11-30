@@ -83,7 +83,7 @@ sub traiteAnnot() {
 
 	for (my $j=$debut;$j<$fin;$j++) {
 	    if (!exists $annotations{$j}) { $annotations{$j}="I-$label"; }
-	    else { warn "Annotation existante en position $j : $annotations{$j} vs. I-$label\n"; }
+	    #else { warn "Annotation existante en position $j : $annotations{$j} vs. I-$label\n"; }
 	}
     }
     close(E);

@@ -37,5 +37,6 @@ foreach my $texte (@textes) {
     }
     my $sortie=$texte;
     $sortie=~s/txt$/ann/;
+    warn "perl outputs-alignment.pl $commande | perl rover-production.pl | perl brat-conversion.pl >$sortie";
     system("perl outputs-alignment.pl $commande | perl rover-production.pl | perl brat-conversion.pl >$sortie");
 }
