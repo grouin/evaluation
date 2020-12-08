@@ -18,6 +18,7 @@ use strict;
 use utf8;
 my $seuil=0;
 my $prec="O";
+my $denominateur=$ARGV[0]; if (!$denominateur) { $denominateur=2; }
 
 while (my $ligne=<STDIN>) {
     chomp $ligne;
@@ -26,7 +27,7 @@ while (my $ligne=<STDIN>) {
     my $rover=0;   # Indique si une classe majoritaire est affichée ou pas
     
     # Seuil fixé à la moitié du nombre de colonnes d'annotations
-    $seuil=($#cols-1)/2;
+    $seuil=($#cols-1)/$denominateur;
 
     # Récupération des classes dans chaque colonne d'annotation et du
     # nombre de fois où chaque classe est utilisée. On remplace le
