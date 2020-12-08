@@ -24,5 +24,5 @@ while (my $ligne=<STDIN>) {
     # Annotations au format BRAT
     if ($cols[$#cols]=~/^B-(.*)$/) { $label=$1; $debut=$cols[0]; $fin=$cols[0]; $token=$cols[1]; }
     elsif ($cols[$#cols]=~/^I/) { $token.="$cols[1]"; $fin=$cols[0]; }
-    elsif ($cols[$#cols] eq "O" && $token ne "") { $token=~s/SPACE/ /g; $token=~s/LINE/\n/g; $fin++; print "T$i\t$label $debut $fin\t$token\n"; $token=""; $i++; }
+    elsif ($cols[$#cols] eq "O" && $token ne "") { $token=~s/SPACE/ /g; $token=~s/LINE/ /g; $fin++; print "T$i\t$label $debut $fin\t$token\n"; $token=""; $i++; }
 }
